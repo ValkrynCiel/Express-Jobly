@@ -42,7 +42,6 @@ app.post('/login', async function(req, res, next) {
     const currUser = await User.authenticate(username, password);
     
     if(currUser){
-      debugger;
       let is_admin = currUser.is_admin;
       let token = jwt.sign({username, is_admin}, SECRET_KEY, OPTIONS);
       return res.json({token});

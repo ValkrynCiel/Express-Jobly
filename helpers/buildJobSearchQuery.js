@@ -1,11 +1,15 @@
-/**  */
+/** accepts search term, minimum salary, minimum equity for jobs as provided by user
+ *  returns a valid query string and variables to be utilized by PostgreSQL
+ */
 
 
 function buildSearchJobQuery({ search, min_salary, min_equity }){        
-        
+       
     let args = [];
+    // prevents SQL injection
     let params = [];
     
+    // allows for variable number of search args
     if (search){
         args.push(`title ILIKE $${args.length + 1}`);
         params.push(`%${search}%`);

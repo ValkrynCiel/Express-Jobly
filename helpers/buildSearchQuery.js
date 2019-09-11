@@ -1,4 +1,6 @@
-/**  */
+/** accepts search term, minimum salary, minimum equity for companies as provided by user
+ *  returns a valid query string and variables to be utilized by PostgreSQL
+ */
 
 
 function buildSearchQuery({search, min_employees, max_employees}){        
